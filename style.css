@@ -1,0 +1,225 @@
+/* Reset & basics */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafc;
+    color: #222;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #0b60d9;
+    outline: none;
+  }
+  
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: #1f2a44;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+  nav a:hover {
+    border-bottom: 2px solid #1e90ff;
+  }
+  
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+  }
+  
+  /* Sections */
+  section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+  }
+  section:nth-child(1) { animation-delay: 0.2s; }
+  section:nth-child(2) { animation-delay: 0.4s; }
+  section:nth-child(3) { animation-delay: 0.6s; }
+  section:nth-child(4) { animation-delay: 0.8s; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    border-bottom: 3px solid #1e90ff;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    color: #1f2a44;
+  }
+  
+  /* About */
+  #about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    color: #333;
+  }
+  
+  /* Skills grid */
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  .skill {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(30, 144, 255, 0.15);
+    text-align: center;
+    font-weight: 600;
+    color: #1f2a44;
+    cursor: default;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .skill:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(30, 144, 255, 0.3);
+  }
+  
+  /* Projects grid */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+  .project {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  .project:hover {
+    box-shadow: 0 12px 28px rgba(30, 144, 255, 0.25);
+    transform: translateY(-8px);
+  }
+  .project h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: #1f2a44;
+    font-weight: 700;
+  }
+  .project p {
+    flex-grow: 1;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  /* Contact */
+  #contact p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  #contact a {
+    font-weight: 600;
+  }
+  
+  form {
+    margin-top: 1rem;
+    max-width: 450px;
+  }
+  form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #1f2a44;
+  }
+  form input, form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  form input:focus, form textarea:focus {
+    border-color: #1e90ff;
+    outline: none;
+  }
+  form button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  form button:hover {
+    background-color: #0b60d9;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #1f2a44;
+    color: #fff;
+    font-size: 0.95rem;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.4rem;
+    }
+    nav {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    main {
+      margin: 2rem auto 3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
